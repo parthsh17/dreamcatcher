@@ -1,0 +1,3 @@
+// Compatibility entry point for services configured with `node start`.
+// The canonical command remains `npm start` (see package.json/render.yaml).
+import './server.js';

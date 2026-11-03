@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: dream-catcher
+    runtime: node
+    buildCommand: npm ci --omit=dev --build-from-source
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: GEMINI_API_KEY
+        sync: false

@@ -25,6 +25,11 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.static(join(__dirname, 'public')));
 
+// Render uses this endpoint to verify that the web process is healthy.
+app.get('/api/health', (_request, response) => {
+  response.status(200).json({ status: 'ok' });
+});
+
 // API Routes
 app.use('/api/dreams', dreamsRouter);
 
